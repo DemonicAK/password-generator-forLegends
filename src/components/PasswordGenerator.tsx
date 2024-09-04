@@ -65,13 +65,19 @@ export default function PasswordGenerator() {
         <Checkbox
           id="include-numbers"
           checked={includeNumbers}
-          onCheckedChange={setIncludeNumbers}
+          // onCheckedChange={setIncludeNumbers}
+          // onCheckedChange={(checked) => setIncludeNumbers(checked)}
+          onCheckedChange={(checked) => {
+            if (typeof checked === "boolean") {
+              setIncludeNumbers(checked);
+            }
+          }}
           className="border-2 border-gray-300 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
         />
         <Label
           htmlFor="include-numbers"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        //   className="checkbox-custom"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          //   className="checkbox-custom"
         >
           Include Numbers
         </Label>
@@ -81,9 +87,15 @@ export default function PasswordGenerator() {
         <Checkbox
           id="include-special-chars"
           checked={includeSpecialChars}
-          onCheckedChange={setIncludeSpecialChars}
-            className="border-2 border-gray-300 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
-        //   className="checkbox-custom"
+          // onCheckedChange={setIncludeSpecialChars}
+          // onCheckedChange={(checked) => setIncludeSpecialChars(checked)}
+          onCheckedChange={(checked) => {
+            if (typeof checked === "boolean") {
+              setIncludeSpecialChars(checked);
+            }
+          }}
+          className="border-2 border-gray-300 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+          //   className="checkbox-custom"
         />
         <Label
           htmlFor="include-special-chars"
